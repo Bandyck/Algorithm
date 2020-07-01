@@ -37,148 +37,6 @@ int main()
 	int MaxIndex = SIZE-1;
 	int flag = -1;
 	QuickSort(List, NowIndex, MaxIndex, flag);
-	/*cout << "NowIndex : " << NowIndex << " MaxIndex : " << MaxIndex << " flag : " << flag << endl;
-	cout << "======================================================================" << endl;
-	for (int i = 0; i < SIZE; ++i)
-		cout << List[i] << " ";
-	cout << endl << endl;
-	if (flag == -1)
-	{
-		int tmp = List[NowIndex];
-		for (int i = MaxIndex; i>NowIndex; --i)
-		{
-			if (tmp>List[i])
-			{
-				List[NowIndex] = List[i];
-				List[i] = tmp;
-				flag *= -1;
-				MaxIndex = NowIndex + flag;
-				NowIndex = i;
-				break;
-			}
-		}
-	}
-	cout << "NowIndex : " << NowIndex << " MaxIndex : " << MaxIndex << " flag : " << flag << endl;
-	cout << "======================================================================" << endl;
-	for (int i = 0; i < SIZE; ++i)
-		cout << List[i] << " ";
-	cout << endl << endl;
-	if (flag == 1)
-	{
-		int tmp = List[NowIndex];
-		for (int i = MaxIndex; i<NowIndex; ++i)
-		{
-			if (tmp<List[i])
-			{
-				List[NowIndex] = List[i];
-				List[i] = tmp;
-				flag *= -1;
-				MaxIndex = NowIndex + flag;
-				NowIndex = i;
-				break;
-			}
-		}
-	}
-	cout << "NowIndex : " << NowIndex << " MaxIndex : " << MaxIndex << " flag : " << flag << endl;
-	cout << "======================================================================" << endl;
-	for (int i = 0; i < SIZE; ++i)
-		cout << List[i] << " ";
-	cout << endl << endl;
-	cout << "NowIndex : " << NowIndex << " MaxIndex : " << MaxIndex << " flag : " << flag << endl;
-	cout << "======================================================================" << endl;
-	for (int i = 0; i < SIZE; ++i)
-		cout << List[i] << " ";
-	cout << endl << endl;
-	if (flag == -1)
-	{
-		int tmp = List[NowIndex];
-		for (int i = MaxIndex; i>NowIndex; --i)
-		{
-			if (tmp>List[i])
-			{
-				List[NowIndex] = List[i];
-				List[i] = tmp;
-				flag *= -1;
-				MaxIndex = NowIndex + flag;
-				NowIndex = i;
-				break;
-			}
-		}
-	}
-	cout << "NowIndex : " << NowIndex << " MaxIndex : " << MaxIndex << " flag : " << flag << endl;
-	cout << "======================================================================" << endl;
-	for (int i = 0; i < SIZE; ++i)
-		cout << List[i] << " ";
-	cout << endl << endl;
-	if (flag == 1)
-	{
-		int tmp = List[NowIndex];
-		for (int i = MaxIndex; i<NowIndex; ++i)
-		{
-			if (tmp<List[i])
-			{
-				List[NowIndex] = List[i];
-				List[i] = tmp;
-				flag *= -1;
-				MaxIndex = NowIndex + flag;
-				NowIndex = i;
-				break;
-			}
-		}
-	}
-	cout << "NowIndex : " << NowIndex << " MaxIndex : " << MaxIndex << " flag : " << flag << endl;
-	cout << "======================================================================" << endl;
-	for (int i = 0; i < SIZE; ++i)
-		cout << List[i] << " ";
-	cout << endl << endl;*/
-	
-	//while (1)
-	//{
-	//	cout << "NowIndex : " << NowIndex << " MaxIndex : " << MaxIndex << " flag : " << flag << endl;
-	//	cout << "======================================================================" << endl;
-	//	for (int i = 0; i < SIZE; ++i)
-	//		cout << List[i] << " ";
-	//	cout << endl << endl;
-	//	if (NowIndex == MaxIndex)
-	//		break;
-	//	if (flag == -1)
-	//	{
-	//		int tmp = List[NowIndex];
-	//		for (int i = MaxIndex; i>NowIndex; --i)
-	//		{
-	//			if (tmp>List[i])
-	//			{
-	//				List[NowIndex] = List[i];
-	//				List[i] = tmp;
-	//				flag *= -1;
-	//				MaxIndex = NowIndex + flag;
-	//				NowIndex = i;
-	//				break;
-	//			}
-	//		}
-	//	}
-	//	else
-	//	{
-	//		int tmp = List[NowIndex];
-	//		for (int i = MaxIndex; i<NowIndex; ++i)
-	//		{
-	//			if (tmp<List[i])
-	//			{
-	//				List[NowIndex] = List[i];
-	//				List[i] = tmp;
-	//				flag *= -1;
-	//				MaxIndex = NowIndex + flag;
-	//				NowIndex = i;
-	//				break;
-	//			}
-	//		}
-	//	}
-	//	getch();
-	//}
-	//
-	//cout << "나왔다 !" << endl;
-	//getch();
-	
 }
 void QuickSort(int *nList, int n, int m, int f)
 {
@@ -190,7 +48,9 @@ void QuickSort(int *nList, int n, int m, int f)
 	for (int i = 0; i < SIZE; ++i)
 		cout << nList[i] << " ";
 	cout << endl << endl;
-	while (1)
+	if (n == m)
+		return;
+	while (n!=m)
 	{
 		if (f == -1)
 		{
@@ -206,14 +66,9 @@ void QuickSort(int *nList, int n, int m, int f)
 					n = i;
 					break;
 				}
-				//if (i == n + 1)
-				//{
-				//	QuickSort(nList, tmp1 + 1, m, -1);
-				//	getch();
-				//	return;
-				//}
+				if(i==n+1)
+					m = m + f;
 			}
-
 		}
 		else
 		{
@@ -229,12 +84,8 @@ void QuickSort(int *nList, int n, int m, int f)
 					n = i;
 					break;
 				}
-				//if (i == n - 1)
-				//{
-				//	QuickSort(nList, n, tmp2-1, -1);
-				//	getch();
-				//	return;
-				//}
+				if (i == n - 1)
+					m = m + f;
 			}
 		}
 		getch();
@@ -243,11 +94,10 @@ void QuickSort(int *nList, int n, int m, int f)
 		for (int i = 0; i < SIZE; ++i)
 			cout << nList[i] << " ";
 		cout << endl << endl;
-		if (n == m)
-		{
-			QuickSort(nList, tmp1, n - 1, -1);
-			QuickSort(nList, m + 1, tmp2, -1);
-		}
 	}
 	cout << "나왔다 !" << endl;
+	if(tmp1<n-1)
+		QuickSort(nList, tmp1,n-1,-1);
+	if(n+1<tmp2)
+		QuickSort(nList, n+1, tmp2, -1);
 }
