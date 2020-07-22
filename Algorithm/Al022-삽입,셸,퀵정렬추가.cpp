@@ -18,6 +18,7 @@ void Shell4Sort(int *List);
 void Shell1Sort(int *List);
 void ShellPrintSort(int *List);
 void QuickSort(int *nList, int n, int m, int f);
+void Mergesort(int *nList);
 int main()
 {
 	int i = 0, j = 0;
@@ -121,11 +122,11 @@ int main()
 	//ShellPrintSort(nList);
 
 	///* 퀵 정렬*/
-	SW.start();
-	QuickSort(nList, 0, 99999, -1);
-	SW.end();
-	cout << "퀵 정렬 시간측정 결과입니다." << endl;
-	cout << SW.getElapsedTime() << " s" << endl;
+	//SW.start();
+	//QuickSort(nList, 0, 99999, -1);
+	//SW.end();
+	//cout << "퀵 정렬 시간측정 결과입니다." << endl;
+	//cout << SW.getElapsedTime() << " s" << endl;
 
 	for (int k = 0; k < 100; ++k)
 		cout << nList[k] << " ";
@@ -358,4 +359,8 @@ void QuickSort(int *nList, int n, int m, int f)
 		QuickSort(nList, tmp1, n - 1, -1);
 	if (n + 1<tmp2)
 		QuickSort(nList, n + 1, tmp2, -1);
+}
+void Mergesort(int *nList)
+{
+
 }

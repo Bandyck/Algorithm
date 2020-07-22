@@ -146,12 +146,6 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Al016.cpp" />
-    <ClCompile Include="Al017.cpp" />
-    <ClCompile Include="Al020.cpp" />
-    <ClCompile Include="Al021.cpp" />
-    <ClCompile Include="Al023.cpp" />
-    <ClCompile Include="Al024.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
